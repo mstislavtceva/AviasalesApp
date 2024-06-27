@@ -1,0 +1,14 @@
+.header {
+  padding: 29px 0 23px;
+  text-align: center;
+
+  @media screen and (max-width: 980px) {
+    padding: 21px 0 11px;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

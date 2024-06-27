@@ -1,0 +1,40 @@
+.filters {
+  margin-bottom: 30px;
+
+  button {
+    padding: 20px;
+    border: 1px solid #dfe5ec;
+    background: none;
+    background-color: #fff;
+    width: 33.3%;
+    font-size: 16px;
+    line-height: 20px;
+    color: #4a4a4a;
+    cursor: pointer;
+    transition:
+      background-color 0.2s ease-in-out,
+      color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
+
+    @media screen and (max-width: 980px) {
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    &:hover {
+      background-color: #2196f3;
+      color: #fff;
+      border-color: #2196f3;
+    }
+  }
+
+  &__btn-left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &__btn-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
