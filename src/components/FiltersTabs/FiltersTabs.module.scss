@@ -28,6 +28,10 @@
     }
   }
 
+  &__btn-center {
+    border-radius: 0%;
+  }
+
   &__btn-left {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -37,4 +41,10 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+}
+
+.active {
+  background-color: #2196f3 !important;
+  color: #fff !important;
+  border-color: #2196f3 !important;
 }

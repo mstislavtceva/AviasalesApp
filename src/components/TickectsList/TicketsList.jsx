@@ -5,11 +5,13 @@ import Ticket from '../Ticket';
 import styles from './TicketsList.module.scss';
 
 export default function TicketsList({ ticketsData }) {
+  const maxId = () => Math.random().toString(36).slice(2);
+
   return (
     <div className={styles.ticketsList}>
       <ul>
         {ticketsData.map((ticket) => (
-          <li>
+          <li key={maxId()}>
             <Ticket price={ticket.price} />
           </li>
         ))}

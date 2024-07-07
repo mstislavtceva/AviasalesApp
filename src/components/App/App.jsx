@@ -1,8 +1,8 @@
 import React from 'react';
 
 import Header from '../Header';
-import Checkbox from '../Checkbox';
-import Filters from '../Filters';
+import FiltersCheck from '../FiltersCheck';
+import FiltersTabs from '../FiltersTabs';
 import TicketsList from '../TickectsList';
 
 import styles from './App.module.scss';
@@ -15,9 +15,9 @@ export default function App() {
       <div className={styles.aviasales__container}>
         <Header />
         <main className={styles.aviasales__main}>
-          <Checkbox />
+          <FiltersCheck />
           <div className={styles.aviasales__content}>
-            <Filters />
+            <FiltersTabs />
             <TicketsList ticketsData={ticketsData} />
           </div>
         </main>
