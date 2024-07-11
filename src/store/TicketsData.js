@@ -15,7 +15,7 @@ export const searchId = createAsyncThunk('tickets/searchId', async function () {
   try {
     const response = await fetch('https://aviasales-test-api.kata.academy/search');
     const data = await response.json();
-    return data.searchId;
+    return data;
   } catch (error) {
     throw new Error('Could not fetch ID');
   }
@@ -44,7 +44,7 @@ const ticketsSlice = createSlice({
       })
       .addCase(searchId.fulfilled, (state, action) => {
         state.loading = true;
-        state.searchId = action.payload;
+        state.searchId = action.payload.searchId;
       })
       .addCase(searchId.rejected, (state, action) => {
         state.loading = false;
@@ -55,6 +55,7 @@ const ticketsSlice = createSlice({
         state.error = null;
       })
       .addCase(getTicketsData.fulfilled, (state, action) => {
+        // console.log(action);
         if (state.tickets.length) {
           state.loading = false;
         } else {
@@ -63,6 +64,7 @@ const ticketsSlice = createSlice({
 
         state.tickets.push(...action.payload.tickets);
         state.stop = action.payload.stop;
+        // state.stop = true;
       })
       .addCase(getTicketsData.rejected, (state, action) => {
         state.loading = false;

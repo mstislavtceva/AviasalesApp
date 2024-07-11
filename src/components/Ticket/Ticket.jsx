@@ -9,7 +9,6 @@ export default function Ticket({ price, from, where }) {
   const formatTimeTicket = (date, duration) => {
     const startTime = new Date(date);
     const endTime = add(startTime, { minutes: duration });
-    console.log(`${format(startTime, 'HH:mm')} – ${format(endTime, 'HH:mm')}`);
     return `${format(startTime, 'HH:mm')} – ${format(endTime, 'HH:mm')}`;
   };
 
