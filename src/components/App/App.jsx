@@ -8,8 +8,6 @@ import TicketsList from '../TickectsList';
 import styles from './App.module.scss';
 
 export default function App() {
-  const ticketsData = [{ price: 13400 }, { price: 28100 }, { price: 13400 }, { price: 28100 }];
-
   return (
     <div className={styles.aviasales}>
       <div className={styles.aviasales__container}>
@@ -18,7 +16,7 @@ export default function App() {
           <FiltersCheck />
           <div className={styles.aviasales__content}>
             <FiltersTabs />
-            <TicketsList ticketsData={ticketsData} />
+            <TicketsList />
           </div>
         </main>
       </div>

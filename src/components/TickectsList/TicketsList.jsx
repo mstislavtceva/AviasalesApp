@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Ticket from '../Ticket';
+import { searchId, getTicketsData } from '../../store/TicketsData';
 
 import styles from './TicketsList.module.scss';
 
-export default function TicketsList({ ticketsData }) {
+export default function TicketsList() {
   const maxId = () => Math.random().toString(36).slice(2);
+
+  const dispatch = useDispatch();
+
+  const idQuery = useSelector((state) => state.tickets.searchId);
+  const tickets = useSelector((state) => state.tickets.tickets);
+
+  useEffect(() => {
+    if (idQuery) {
+      dispatch(getTicketsData(idQuery));
+    }
+  }, [dispatch, idQuery]);
+
+  useEffect(() => {
+    dispatch(searchId());
+  }, [dispatch]);
+
+  // console.log(idQuery);
+  // console.log(tickets);
 
   return (
     <div className={styles.ticketsList}>
       <ul>
-        {ticketsData.map((ticket) => (
+        {tickets.slice(0, 5).map((ticket) => (
           <li key={maxId()}>
             <Ticket price={ticket.price} />
           </li>
