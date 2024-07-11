@@ -24,15 +24,22 @@ export default function TicketsList() {
     dispatch(searchId());
   }, [dispatch]);
 
-  // console.log(idQuery);
-  // console.log(tickets);
+  console.log(tickets);
 
   return (
     <div className={styles.ticketsList}>
       <ul>
         {tickets.slice(0, 5).map((ticket) => (
           <li key={maxId()}>
-            <Ticket price={ticket.price} />
+            <Ticket
+              price={ticket.price}
+              from={ticket.segments[0]}
+              where={ticket.segments[1]}
+              // from={ticket.segments.origin}
+              // in={ticket.segments.destination}
+              // date={ticket.segments.date}
+              // duration={ticket.segments.duration}
+            />
           </li>
         ))}
       </ul>
